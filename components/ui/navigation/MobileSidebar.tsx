@@ -21,34 +21,34 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navigation = [
-  { name: "Overview", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Details", href: siteConfig.baseLinks.details, icon: RiListCheck },
+  { name: "Черепах", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
+  { name: "Игра по крупному", href: siteConfig.baseLinks.details, icon: RiListCheck },
   {
-    name: "Troops",
+    name: "Войска",
     href: siteConfig.baseLinks.troops.training,
-    icon: RiSettings5Line,
+    icon: RiLinkM,
   },
 ] as const
 
 const shortcuts = [
   {
-    name: "Add new user",
-    href: "/troops/users",
+    name: "Быстрый шорд код",
+    href: "#",
     icon: RiLinkM,
   },
   {
-    name: "Workspace usage",
-    href: "/troops/billing#billing-overview",
+    name: "Быстрый шорд код",
+    href: "#",
     icon: RiLinkM,
   },
   {
-    name: "Cost spend control",
-    href: "/troops/billing#cost-spend-control",
+    name: "Быстрый шорд код",
+    href: "#",
     icon: RiLinkM,
   },
   {
-    name: "Overview – Rows written",
-    href: "/overview#usage-overview",
+    name: "Быстрый шорд код",
+    href: "#",
     icon: RiLinkM,
   },
 ] as const

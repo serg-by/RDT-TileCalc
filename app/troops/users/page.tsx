@@ -50,15 +50,6 @@ const points: Points[] = [
   { name: "t10", point: { turtle: "60", vs: "150" } },
 ];
 
-
-/* const pointstime: PointsTime[] = [
-  { name: "turtle", point: "250" },
-  { name: "vs", point: "625" },
- 
-]; */
-//rertert
-//sdfsdf
-
 // -------------------- Component --------------------
 
 const Retraining: React.FC = () => {

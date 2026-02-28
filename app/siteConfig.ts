@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "RDT Dashboard",
   url: "",
-  description: "The only dashboard you will ever need.",
+  description: "Калькулятор рассчета событий.",
   baseLinks: {
     home: "/",
     overview: "/overview",

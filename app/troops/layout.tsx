@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navigationtroops = [
-  { name: "Обучение", href: siteConfig.baseLinks.troops.training  },
+  { name: "Обучение", href: siteConfig.baseLinks.troops.training },
   { name: "Переобучение", href: siteConfig.baseLinks.troops.retraining },
   { name: "Обучение тест", href: siteConfig.baseLinks.troops.users },
 ]
