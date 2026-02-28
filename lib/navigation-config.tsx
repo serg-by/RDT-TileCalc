@@ -1,31 +1,25 @@
-import { siteConfig } from "@/app/siteConfig"
-import type React from "react"
-import {
-  RiHome2Line,
-  RiLinkM,
-  RiListCheck,
-} from "@remixicon/react"
-import type { ComponentType } from "react"
+import { siteConfig } from "@/app/siteConfig";
+import type { ComponentType, SVGProps } from "react";
+import { Home, Link, ListCheck } from "lucide-react";
 
-type IconComponent = ComponentType<
-  React.SVGAttributes<SVGSVGElement> & { "aria-hidden"?: boolean | string }
->
+// Тип для иконок — компонент, принимающий SVG‑пропсы
+type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
 export type NavItem = {
-  name: string
-  href: string
-  icon: IconComponent
-}
+  name: string;
+  href: string;
+  icon: IconComponent;
+};
 
 export const navigation: readonly NavItem[] = [
-  { name: "Черепах", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Игра по крупному", href: siteConfig.baseLinks.details, icon: RiListCheck },
-  { name: "Войска", href: siteConfig.baseLinks.troops.training, icon: RiLinkM, },
-] as const
+  { name: "Черепах", href: siteConfig.baseLinks.overview, icon: Home },
+  { name: "Игра по крупному", href: siteConfig.baseLinks.details, icon: ListCheck },
+  { name: "Войска", href: siteConfig.baseLinks.troops.training, icon: Link },
+] as const;
 
 export const shortcuts: readonly NavItem[] = [
-  { name: "Быстрый шорд код", href: "#", icon: RiLinkM },
-  { name: "Быстрый шорд код", href: "#", icon: RiLinkM },
-  { name: "Быстрый шорд код", href: "#", icon: RiLinkM },
-  { name: "Быстрый шорд код", href: "#", icon: RiLinkM },
-] as const
+  { name: "Быстрый шорд код 1", href: "#", icon: Link },
+  { name: "Быстрый шорд код 2", href: "#", icon: Link },
+  { name: "Быстрый шорд код 3", href: "#", icon: Link },
+  { name: "Быстрый шорд код 4", href: "#", icon: Link },
+] as const;
