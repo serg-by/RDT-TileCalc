@@ -1,51 +1,10 @@
 "use client";
 import { siteConfig } from "@/app/siteConfig";
+import { navigation, shortcuts } from "@/lib/navigation-config";
 import { cn, focusRing } from "@/lib/utils";
-import {
-  RiHome2Line,
-  RiLinkM,
-  RiListCheck,
-} from "@remixicon/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileSidebar from "@/components/ui/navigation/MobileSidebar";
-
-
-
-/* import { UserProfileDesktop, UserProfileMobile } from "./UserProfile"; */
-
-const navigation = [
-  { name: "Черепах", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Игра по крупному", href: siteConfig.baseLinks.details, icon: RiListCheck },
-  {
-    name: "Войска",
-    href: siteConfig.baseLinks.troops.training,
-    icon: RiLinkM,
-  },
-] as const;
-
-const shortcuts = [
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-] as const
 
 export function Sidebar() {
   const pathname = usePathname();

@@ -1,6 +1,5 @@
 import { siteConfig } from "@/app/siteConfig"
 import { Button } from "@/components/ui/button"
-
 import {
   Sheet,
   SheetClose,
@@ -9,49 +8,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { navigation, shortcuts } from "@/lib/navigation-config"
 import { cn, focusRing } from "@/lib/utils"
-import {
-  RiHome2Line,
-  RiLinkM,
-  RiListCheck,
-  RiMenuLine,
-  RiSettings5Line,
-} from "@remixicon/react"
+import { RiMenuLine } from "@remixicon/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
-const navigation = [
-  { name: "Черепах", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Игра по крупному", href: siteConfig.baseLinks.details, icon: RiListCheck },
-  {
-    name: "Войска",
-    href: siteConfig.baseLinks.troops.training,
-    icon: RiLinkM,
-  },
-] as const
-
-const shortcuts = [
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-  {
-    name: "Быстрый шорд код",
-    href: "#",
-    icon: RiLinkM,
-  },
-] as const
 
 export default function MobileSidebar() {
   const pathname = usePathname()
