@@ -1,23 +1,28 @@
-import React from "react"
-import * as NavigationMenuPrimitives from "@radix-ui/react-navigation-menu"
+import React from "react";
+import * as NavigationMenuPrimitives from "@radix-ui/react-navigation-menu";
 
-import { cn, focusRing } from "@/lib/utils"
+import { cn, focusRing } from "@/lib/utils";
+
+// Расширяем тип props для NavigationMenuPrimitives.Link, добавляя children
+interface ExtendedLinkProps extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitives.Link> {
+  children?: React.ReactNode;
+}
 
 function getSubtree(
   options: { asChild: boolean | undefined; children: React.ReactNode },
   content: React.ReactNode | ((children: React.ReactNode) => React.ReactNode),
 ) {
-  const { asChild, children } = options
+  const { asChild, children } = options;
   if (!asChild)
-    return typeof content === "function" ? content(children) : content
+    return typeof content === "function" ? content(children) : content;
 
-  const firstChild = React.Children.only(children) as React.ReactElement
+  const firstChild = React.Children.only(children) as React.ReactElement<ExtendedLinkProps>; // Используем расширенный тип
   return React.cloneElement(firstChild, {
     children:
       typeof content === "function"
         ? content(firstChild.props.children)
         : content,
-  })
+  });
 }
 
 const TabNavigation = React.forwardRef<
@@ -45,9 +50,9 @@ const TabNavigation = React.forwardRef<
       {children}
     </NavigationMenuPrimitives.List>
   </NavigationMenuPrimitives.Root>
-))
+));
 
-TabNavigation.displayName = "TabNavigation"
+TabNavigation.displayName = "TabNavigation";
 
 const TabNavigationLink = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitives.Link>,
@@ -95,8 +100,8 @@ const TabNavigationLink = React.forwardRef<
       ))}
     </NavigationMenuPrimitives.Link>
   </NavigationMenuPrimitives.Item>
-))
+));
 
-TabNavigationLink.displayName = "TabNavigationLink"
+TabNavigationLink.displayName = "TabNavigationLink";
 
-export { TabNavigation, TabNavigationLink }
+export { TabNavigation, TabNavigationLink };
